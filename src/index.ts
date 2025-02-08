@@ -1,44 +1,23 @@
-import Hapi from "@hapi/hapi";
-import { books } from "../types";
+import Hapi, { Server } from "@hapi/hapi";
+import { routes } from "./routes/AddBookWithCompleteData.ts";
 const PORT = 9000;
 const HOST = "localhost";
-const Book: books[] = [
-  {
-    id: "1",
-    name: "Buku 1",
-    year: 2020,
-    author: "author 1",
-    summary: "summary 1",
-    publisher: "publisher 1",
-    pageCount: 100,
-    readPage: 50,
-    finished: false,
-    reading: true,
-    insertedAt: "",
-    updatedAt: "",
-  },
-  {
-    id: "1",
-    name: "Buku 1",
-    year: 2020,
-    author: "author 1",
-    summary: "summary 1",
-    publisher: "publisher 1",
-    pageCount: 100,
-    readPage: 50,
-    finished: false,
-    reading: true,
-    insertedAt: "",
-    updatedAt: "",
-  },
-];
 
 const init = async () => {
   const server = Hapi.server({
     port: PORT,
     host: HOST,
   });
+  const BookRoute = {
+    name: "books",
+    register: async function (server: Server) {
+      server.route(routes);
+    },
+  };
 
+  await server.register(BookRoute, {
+    routes: { prefix: "/books" },
+  });
   await server.start();
   console.log("Server running on %s", server.info.uri);
 };
