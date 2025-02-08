@@ -15,6 +15,8 @@ const saveData = () => {
 };
 export const addBookHandler = async (request, h) => {
   let newBook = request.payload;
+  console.log(newBook);
+
   newBook.id = crypto.randomUUID();
   newBook = setDefaultBookValues(newBook);
   if (newBook.name === undefined) {
@@ -37,6 +39,8 @@ export const addBookHandler = async (request, h) => {
     return response;
   }
   books.push(newBook);
+  console.log(newBook);
+
   saveData();
   const response = h
     .response({
