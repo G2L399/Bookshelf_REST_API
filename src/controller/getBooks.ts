@@ -61,13 +61,14 @@ export const getBookHandler = async (
   request: Hapi.Request<Hapi.ReqRefDefaults>,
   h: Hapi.ResponseToolkit<Hapi.ReqRefDefaults>
 ) => {
-  const { reading } = request.query;
+  const { reading, finished } = request.query;
   const readingStatus = Boolean(Number(reading));
-  if (Boolean(reading)) {
-    const newBook = books
-      ?.filter((book) => {
-        return book.reading === readingStatus;
-      })
+  const finishedStatus = Boolean(Number(finished));
+  let newBook: Partial<Book>[] = [];
+  let response: Hapi.ResponseObject;
+  if (reading) {
+    newBook = books
+      ?.filter(({ reading }) => reading === readingStatus)
       .map(({ id, name, publisher }) => {
         return {
           id,
@@ -75,7 +76,7 @@ export const getBookHandler = async (
           publisher,
         };
       });
-    const response = h
+    response = h
       .response({
         status: "success",
         data: {
@@ -83,23 +84,41 @@ export const getBookHandler = async (
         },
       })
       .code(200);
-    return response;
+  } else if (finished) {
+    newBook = books
+      ?.filter(({ finished }) => finished === finishedStatus)
+      .map(({ id, name, publisher }) => {
+        return {
+          id,
+          name,
+          publisher,
+        };
+      });
+    response = h
+      .response({
+        status: "success",
+        data: {
+          books: newBook,
+        },
+      })
+      .code(200);
+  } else {
+    newBook = books?.map(({ id, name, publisher }) => {
+      return {
+        id,
+        name,
+        publisher,
+      };
+    });
+    response = h
+      .response({
+        status: "success",
+        data: {
+          books: newBook,
+        },
+      })
+      .code(200);
   }
-  const newBook = books?.map(({ id, name, publisher }) => {
-    return {
-      id,
-      name,
-      publisher,
-    };
-  });
 
-  const response = h
-    .response({
-      status: "success",
-      data: {
-        books: newBook,
-      },
-    })
-    .code(200);
   return response;
 };

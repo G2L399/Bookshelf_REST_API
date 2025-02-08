@@ -19,12 +19,16 @@ interface Book {
   updatedAt?: string;
   [key: string]: string | number | boolean | undefined; // Add index signature
 }
-
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const filePath = path.join(__dirname, "../../data.json");
 let books: Book[] = [];
+const fileData = fs.readFileSync(filePath, "utf8");
 if (fs.existsSync(filePath)) {
-  books = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  if (fileData === "") {
+    fs.writeFileSync(filePath, JSON.stringify([], null, 2));
+  } else {
+    books = JSON.parse(fileData);
+  }
 }
 const saveData = () => {
   fs.writeFileSync(filePath, JSON.stringify(books, null, 2));

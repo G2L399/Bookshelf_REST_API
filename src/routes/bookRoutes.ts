@@ -26,13 +26,6 @@ interface Book {
   [key: string]: string | number | boolean | undefined; // Add index signature
 }
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const filePath = path.join(__dirname, "../../data.json");
-let books: Book[] = [];
-if (fs.existsSync(filePath)) {
-  books = JSON.parse(fs.readFileSync(filePath, "utf8"));
-}
-
 export const routes: Hapi.ServerRoute<Hapi.ReqRefDefaults>[] = [
   {
     method: "POST",
