@@ -6,12 +6,40 @@
     "summary": "Lorem ipsum dolor sit amet",
     "publisher": "Dicoding Indonesia",
     "pageCount": 100,
-    "readPage": 25,
+    "readPage": 100,
     "reading": true,
-    "id": "e52f66ec-f6fc-47f5-9883-047ef9e2a66f",
+    "id": "49976b62-318d-43ed-838d-af862ead47bf",
     "finished": true,
-    "insertedAt": "2025-02-08T03:04:12.430Z",
-    "updatedAt": "2025-02-08T03:04:12.431Z"
+    "insertedAt": "2025-02-08T03:25:36.879Z",
+    "updatedAt": "2025-02-08T03:25:36.879Z"
+  },
+  {
+    "name": "Kelas Dicoding",
+    "year": 2010,
+    "author": "John Doe",
+    "summary": "Lorem ipsum dolor sit amet",
+    "publisher": "Dicoding Indonesia",
+    "pageCount": 100,
+    "readPage": 99,
+    "reading": true,
+    "id": "4d76c1c2-2ae5-4699-bf8e-2edf2341af6c",
+    "finished": true,
+    "insertedAt": "2025-02-08T03:25:39.683Z",
+    "updatedAt": "2025-02-08T03:25:39.684Z"
+  },
+  {
+    "name": "dicoding Jobs",
+    "year": 2010,
+    "author": "John Doe",
+    "summary": "Lorem ipsum dolor sit amet",
+    "publisher": "Dicoding Indonesia",
+    "pageCount": 100,
+    "readPage": 0,
+    "reading": false,
+    "id": "c6ca2f76-ab4e-4eb6-baa9-29ece10b25e8",
+    "finished": true,
+    "insertedAt": "2025-02-08T03:25:42.642Z",
+    "updatedAt": "2025-02-08T03:25:42.643Z"
   },
   {
     "name": "Buku A",
@@ -20,11 +48,11 @@
     "summary": "Lorem ipsum dolor sit amet",
     "publisher": "Dicoding Indonesia",
     "pageCount": 100,
-    "readPage": 100,
-    "reading": true,
-    "id": "ae022e50-e0a3-474c-bae1-69dcb6ba5d35",
+    "readPage": 0,
+    "reading": false,
+    "id": "c3044766-09a4-472b-8436-954b37d8ed46",
     "finished": true,
-    "insertedAt": "2025-02-08T03:04:15.946Z",
-    "updatedAt": "2025-02-08T03:04:15.947Z"
+    "insertedAt": "2025-02-08T03:25:45.874Z",
+    "updatedAt": "2025-02-08T03:25:45.876Z"
   }
 ]

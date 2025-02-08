@@ -32,12 +32,9 @@ export const getBookWithIDHandler = async (
   h: Hapi.ResponseToolkit<Hapi.ReqRefDefaults>
 ) => {
   const { id } = request.params;
-
-  const book = books.find((book) => {
-    const newBook = book.id === id;
-    return newBook;
-  });
-  if (book === undefined) {
+  const books: Book[] = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  const book = books.find((book) => book.id === id);
+  if (!book) {
     const response = h
       .response({
         status: "fail",
@@ -110,14 +107,26 @@ export const getBookHandler = async (
         publisher,
       };
     });
-    response = h
-      .response({
-        status: "success",
-        data: {
-          books: newBook,
-        },
-      })
-      .code(200);
+    if (newBook.length === 0) {
+      response = h
+        .response({
+          status: "success",
+          data: {
+            books: newBook,
+          },
+        })
+        .code(404);
+      return response;
+    } else {
+      response = h
+        .response({
+          status: "success",
+          data: {
+            books: newBook,
+          },
+        })
+        .code(200);
+    }
   }
 
   return response;

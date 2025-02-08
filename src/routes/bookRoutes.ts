@@ -1,7 +1,4 @@
 import Hapi from "@hapi/hapi";
-import fs from "fs";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
 import { editBookHandler } from "../controller/editBooks.ts";
 import { deletebookHandler } from "../controller/deleteBooks.ts";
 import {
@@ -9,22 +6,6 @@ import {
   getBookWithIDHandler,
 } from "../controller/getBooks.ts";
 import { addBookHandler } from "../controller/addbooks.ts";
-
-interface Book {
-  id: string;
-  name: string;
-  year: number;
-  author: string;
-  summary: string;
-  publisher: string;
-  pageCount: number;
-  readPage: number;
-  finished?: boolean;
-  reading?: boolean;
-  insertedAt?: string;
-  updatedAt?: string;
-  [key: string]: string | number | boolean | undefined; // Add index signature
-}
 
 export const routes: Hapi.ServerRoute<Hapi.ReqRefDefaults>[] = [
   {
