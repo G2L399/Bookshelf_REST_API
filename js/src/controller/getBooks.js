@@ -27,6 +27,7 @@ export const getBookWithIDHandler = async (request, h) => {
     .response({
       status: "success",
       data: {
+        status: 200,
         book,
       },
     })
@@ -55,6 +56,7 @@ export const getBookHandler = async (request, h) => {
       .response({
         status: "success",
         data: {
+          status: 200,
           books: newBook,
         },
       })
@@ -73,6 +75,7 @@ export const getBookHandler = async (request, h) => {
       .response({
         status: "success",
         data: {
+          status: 200,
           books: newBook,
         },
       })
@@ -91,6 +94,7 @@ export const getBookHandler = async (request, h) => {
       .response({
         status: "success",
         data: {
+          status: 200,
           books: newBook,
         },
       })
@@ -106,10 +110,8 @@ export const getBookHandler = async (request, h) => {
     if (newBook.length === 0) {
       response = h
         .response({
-          status: "success",
-          data: {
-            books: newBook,
-          },
+          status: "fail",
+          message: "Buku tidak ditemukan",
         })
         .code(404);
       return response;
@@ -118,6 +120,7 @@ export const getBookHandler = async (request, h) => {
         .response({
           status: "success",
           data: {
+            status: 200,
             books: newBook,
           },
         })

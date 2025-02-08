@@ -17,8 +17,6 @@ export const addBookHandler = async (request, h) => {
   let newBook = request.payload;
   newBook.id = crypto.randomUUID();
   newBook = setDefaultBookValues(newBook);
-  console.log(request.payload);
-
   if (newBook.name === undefined) {
     const response = h
       .response({
@@ -45,6 +43,7 @@ export const addBookHandler = async (request, h) => {
       status: "success",
       message: "Buku berhasil ditambahkan",
       data: {
+        status: 201,
         bookId: newBook.id,
       },
     })
