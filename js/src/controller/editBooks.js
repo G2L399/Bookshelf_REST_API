@@ -1,9 +1,6 @@
-import fs from "fs";
-import path from "path";
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+const fs = require("fs");
+const path = require("path");
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const filePath = path.join(__dirname, "../../data.json");
 let books = [];
 const fileData = fs.readFileSync(filePath, "utf8");
@@ -17,7 +14,7 @@ if (fs.existsSync(filePath)) {
 const saveData = () => {
   fs.writeFileSync(filePath, JSON.stringify(books, null, 2));
 };
-export const editBookHandler = async (request, h) => {
+const editBookHandler = async (request, h) => {
   const { id } = request.params;
   const newBook = request.payload;
   const book = books.find((book) => book.id === id);
@@ -71,3 +68,5 @@ export const editBookHandler = async (request, h) => {
     .code(200);
   return response;
 };
+
+module.exports = { editBookHandler };

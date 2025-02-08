@@ -1,5 +1,5 @@
-import Hapi from "@hapi/hapi";
-import { routes } from "./routes/bookRoutes.js";
+const Hapi = require("@hapi/hapi");
+const routes = require("./routes/bookRoutes.js");
 const PORT = 9000;
 const HOST = "localhost";
 

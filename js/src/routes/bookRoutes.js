@@ -1,12 +1,12 @@
-import { editBookHandler } from "../controller/editBooks.js";
-import { deletebookHandler } from "../controller/deleteBooks.js";
-import {
+const { editBookHandler } = require("../controller/editBooks.js");
+const { deletebookHandler } = require("../controller/deleteBooks.js");
+const {
   getBookHandler,
   getBookWithIDHandler,
-} from "../controller/getBooks.js";
-import { addBookHandler } from "../controller/addbooks.js";
+} = require("../controller/getBooks.js");
+const { addBookHandler } = require("../controller/addbooks.js");
 
-export const routes = [
+const routes = [
   {
     method: "POST",
     path: "/",
@@ -33,3 +33,5 @@ export const routes = [
     handler: deletebookHandler,
   },
 ];
+
+module.exports = routes;

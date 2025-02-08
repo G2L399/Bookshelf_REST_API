@@ -1,4 +1,4 @@
-export function setDefaultBookValues(book) {
+function setDefaultBookValues(book) {
   book.finished = book.finished == undefined ? false : book.finished;
   book.reading = book.reading == undefined ? false : book.reading;
   book.insertedAt =
@@ -7,3 +7,5 @@ export function setDefaultBookValues(book) {
 
   return book;
 }
+
+module.exports = { setDefaultBookValues };

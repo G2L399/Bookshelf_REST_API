@@ -1,16 +1,13 @@
-import fs from "fs";
-import path from "path";
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+const fs = require("fs");
+const path = require("path");
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const filePath = path.join(__dirname, "../../data.json");
 let books = [];
 if (fs.existsSync(filePath)) {
   books = JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 
-export const getBookWithIDHandler = async (request, h) => {
+const getBookWithIDHandler = async (request, h) => {
   const { id } = request.params;
   const books = JSON.parse(fs.readFileSync(filePath, "utf8"));
   const book = books.find((book) => book.id === id);
@@ -35,7 +32,7 @@ export const getBookWithIDHandler = async (request, h) => {
   return response;
 };
 
-export const getBookHandler = async (request, h) => {
+const getBookHandler = async (request, h) => {
   const { reading, finished, name } = request.query;
   const readingStatus = Boolean(Number(reading));
   const finishedStatus = Boolean(Number(finished));
@@ -130,3 +127,5 @@ export const getBookHandler = async (request, h) => {
 
   return response;
 };
+
+module.exports = { getBookHandler, getBookWithIDHandler };

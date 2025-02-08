@@ -1,9 +1,6 @@
-import fs from "fs";
-import path from "path";
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+const fs = require("fs");
+const path = require("path");
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const filePath = path.join(__dirname, "../../data.json");
 let books = [];
 if (fs.existsSync(filePath)) {
@@ -12,7 +9,7 @@ if (fs.existsSync(filePath)) {
 const saveData = () => {
   fs.writeFileSync(filePath, JSON.stringify(books, null, 2));
 };
-export const deletebookHandler = async (request, h) => {
+const deletebookHandler = async (request, h) => {
   const { id } = request.params;
   const bookIndex = books.findIndex((book) => book.id === id);
   if (bookIndex === -1) {
@@ -34,3 +31,5 @@ export const deletebookHandler = async (request, h) => {
     .code(200);
   return response;
 };
+
+module.exports = { deletebookHandler };

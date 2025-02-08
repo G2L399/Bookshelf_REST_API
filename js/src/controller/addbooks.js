@@ -1,10 +1,7 @@
-import fs from "fs";
-import path from "path";
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-import { setDefaultBookValues } from "../DefaultValue.js";
+const fs = require("fs");
+const path = require("path");
+const { setDefaultBookValues } = require("../DefaultValue.js");
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const filePath = path.join(__dirname, "../../data.json");
 let books = [];
 if (fs.existsSync(filePath)) {
@@ -13,7 +10,7 @@ if (fs.existsSync(filePath)) {
 const saveData = () => {
   fs.writeFileSync(filePath, JSON.stringify(books, null, 2));
 };
-export const addBookHandler = async (request, h) => {
+const addBookHandler = async (request, h) => {
   let newBook = request.payload;
   console.log("bro what   ", newBook);
 
@@ -56,3 +53,5 @@ export const addBookHandler = async (request, h) => {
     .code(201);
   return response;
 };
+
+module.exports = { addBookHandler };

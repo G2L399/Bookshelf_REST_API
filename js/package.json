@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "@hapi/hapi": "^21.3.12",
     "nodemon": "^3.1.9"
