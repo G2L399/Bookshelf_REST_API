@@ -6,7 +6,7 @@
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "rootDir": "js/src",
+    "rootDir": "./src",
     "noEmit": true,
     "emitDeclarationOnly": false,
     "allowImportingTsExtensions": true
