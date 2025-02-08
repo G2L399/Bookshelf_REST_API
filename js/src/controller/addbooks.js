@@ -15,10 +15,12 @@ const saveData = () => {
 };
 export const addBookHandler = async (request, h) => {
   let newBook = request.payload;
-  console.log(newBook);
+  console.log("bro what   ", newBook);
 
   newBook.id = crypto.randomUUID();
   newBook = setDefaultBookValues(newBook);
+  console.log("bro what   ", newBook);
+
   if (newBook.name === undefined) {
     const response = h
       .response({
