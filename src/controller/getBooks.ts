@@ -58,9 +58,10 @@ export const getBookHandler = async (
   request: Hapi.Request<Hapi.ReqRefDefaults>,
   h: Hapi.ResponseToolkit<Hapi.ReqRefDefaults>
 ) => {
-  const { reading, finished } = request.query;
+  const { reading, finished, name } = request.query;
   const readingStatus = Boolean(Number(reading));
   const finishedStatus = Boolean(Number(finished));
+  const bookName = name?.toString().toLowerCase();
   let newBook: Partial<Book>[] = [];
   let response: Hapi.ResponseObject;
   if (reading) {
@@ -84,6 +85,24 @@ export const getBookHandler = async (
   } else if (finished) {
     newBook = books
       ?.filter(({ finished }) => finished === finishedStatus)
+      .map(({ id, name, publisher }) => {
+        return {
+          id,
+          name,
+          publisher,
+        };
+      });
+    response = h
+      .response({
+        status: "success",
+        data: {
+          books: newBook,
+        },
+      })
+      .code(200);
+  } else if (name) {
+    newBook = books
+      ?.filter(({ name }) => name.toLowerCase().includes(bookName))
       .map(({ id, name, publisher }) => {
         return {
           id,

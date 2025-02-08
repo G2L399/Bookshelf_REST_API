@@ -1,19 +1,5 @@
 [
   {
-    "name": "Buku A",
-    "year": 2010,
-    "author": "John Doe",
-    "summary": "Lorem ipsum dolor sit amet",
-    "publisher": "Dicoding Indonesia",
-    "pageCount": 100,
-    "readPage": 100,
-    "reading": true,
-    "id": "49976b62-318d-43ed-838d-af862ead47bf",
-    "finished": true,
-    "insertedAt": "2025-02-08T03:25:36.879Z",
-    "updatedAt": "2025-02-08T03:25:36.879Z"
-  },
-  {
     "name": "Kelas Dicoding",
     "year": 2010,
     "author": "John Doe",
@@ -22,10 +8,10 @@
     "pageCount": 100,
     "readPage": 99,
     "reading": true,
-    "id": "4d76c1c2-2ae5-4699-bf8e-2edf2341af6c",
+    "id": "170a887d-ff3d-4f5a-b950-d1271f1dda23",
     "finished": true,
-    "insertedAt": "2025-02-08T03:25:39.683Z",
-    "updatedAt": "2025-02-08T03:25:39.684Z"
+    "insertedAt": "2025-02-08T03:47:39.054Z",
+    "updatedAt": "2025-02-08T03:47:39.055Z"
   },
   {
     "name": "dicoding Jobs",
@@ -36,23 +22,9 @@
     "pageCount": 100,
     "readPage": 0,
     "reading": false,
-    "id": "c6ca2f76-ab4e-4eb6-baa9-29ece10b25e8",
+    "id": "715b6bab-8791-4dcb-b405-b66246ef462c",
     "finished": true,
-    "insertedAt": "2025-02-08T03:25:42.642Z",
-    "updatedAt": "2025-02-08T03:25:42.643Z"
-  },
-  {
-    "name": "Buku A",
-    "year": 2010,
-    "author": "John Doe",
-    "summary": "Lorem ipsum dolor sit amet",
-    "publisher": "Dicoding Indonesia",
-    "pageCount": 100,
-    "readPage": 0,
-    "reading": false,
-    "id": "c3044766-09a4-472b-8436-954b37d8ed46",
-    "finished": true,
-    "insertedAt": "2025-02-08T03:25:45.874Z",
-    "updatedAt": "2025-02-08T03:25:45.876Z"
+    "insertedAt": "2025-02-08T03:47:41.904Z",
+    "updatedAt": "2025-02-08T03:47:41.906Z"
   }
 ]
