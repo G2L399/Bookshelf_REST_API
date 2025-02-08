@@ -1,5 +1,5 @@
 import Hapi, { Server } from "@hapi/hapi";
-import { routes } from "./routes/AddBookWithCompleteData.ts";
+import { routes } from "./routes/bookRoutes.ts";
 const PORT = 9000;
 const HOST = "localhost";
 

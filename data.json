@@ -1,17 +1,31 @@
 [
   {
-    "name": "Buku A",
+    "name": "Kelas Dicoding",
     "year": 2010,
     "author": "John Doe",
     "summary": "Lorem ipsum dolor sit amet",
     "publisher": "Dicoding Indonesia",
     "pageCount": 100,
-    "readPage": 100,
+    "readPage": 99,
     "reading": true,
-    "id": "5eb95620-533f-4b13-8a5e-0b704e4ea202",
+    "id": "de53ddec-3004-4d5e-871f-c3bc4b8ca6ff",
     "finished": true,
-    "insertedAt": "2025-02-08T01:31:29.688Z",
-    "updatedAt": "2025-02-08T01:31:29.688Z"
+    "insertedAt": "2025-02-08T01:45:32.311Z",
+    "updatedAt": "2025-02-08T01:45:32.311Z"
+  },
+  {
+    "name": "Buku A Revisi",
+    "year": 2011,
+    "author": "Jane Doe",
+    "summary": "Lorem Dolor sit Ametttt",
+    "publisher": "Dicoding",
+    "pageCount": 200,
+    "readPage": 26,
+    "reading": false,
+    "id": "0ee5627a-dfa8-4715-9417-98bfda60e787",
+    "finished": false,
+    "insertedAt": "2025-02-08T02:12:24.548Z",
+    "updatedAt": "2025-02-08T02:13:57.001Z"
   },
   {
     "name": "Buku A",
@@ -22,9 +36,23 @@
     "pageCount": 100,
     "readPage": 100,
     "reading": true,
-    "id": "6484b930-23a5-4dd9-853e-4d803805d11e",
+    "id": "3a087bd4-d791-4095-8da5-4b4ac5b8f12d",
+    "finished": false,
+    "insertedAt": "2025-02-08T02:18:23.125Z",
+    "updatedAt": "2025-02-08T02:18:23.126Z"
+  },
+  {
+    "name": "Buku A",
+    "year": 2010,
+    "author": "John Doe",
+    "summary": "Lorem ipsum dolor sit amet",
+    "publisher": "Dicoding Indonesia",
+    "pageCount": 100,
+    "readPage": 100,
+    "reading": false,
+    "id": "fe1e32c5-89b9-459a-a88d-69b75cb02e56",
     "finished": true,
-    "insertedAt": "2025-02-08T01:31:38.183Z",
-    "updatedAt": "2025-02-08T01:31:38.185Z"
+    "insertedAt": "2025-02-08T02:19:55.757Z",
+    "updatedAt": "2025-02-08T02:19:55.758Z"
   }
 ]
